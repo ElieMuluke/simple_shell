@@ -48,5 +48,4 @@ void print_str(char *str)
 	{
 		_printchar(str[i]);
 	}
-	_printchar('\n');
 }
