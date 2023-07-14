@@ -1,3 +1,4 @@
+#include <simple_shell.h>
 /**
  * _realloc - reallocates a memory block
  * @ptr: pointer to the previous memory block
