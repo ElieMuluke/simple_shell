@@ -49,7 +49,7 @@ int intlen(int num)
  */
 int print_error(sh_t *data)
 {
-	char *idx = _itoa(data->index);
+	char *idx = _atoa(data->index);
 
 	PRINT("hsh: ");
 	PRINT(idx);

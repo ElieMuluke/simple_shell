@@ -66,7 +66,7 @@ int is_builtin(sh_t *data)
 {
 	blt_t blt[] = {
 		{"exit", abort_prg},
-		{"cd", change_dir},
+		{"cd", change_directory},
 		{"help", display_help},
 		{NULL, NULL}
 	};
