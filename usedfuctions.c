@@ -1,4 +1,4 @@
-#include <simple_shell.h>
+#include "simple_shell.h"
 /**
  * _atoi - Convert a string to an integer
  * @str: The string to convert
