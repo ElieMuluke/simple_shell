@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "simple_shell.h"
 
 #define SET_OLDPWD(V) (V = _strdup(_getenv("OLDPWD")))
 
