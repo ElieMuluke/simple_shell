@@ -49,7 +49,8 @@ int intlen(int num)
  */
 int print_error(sh_t *data)
 {
-	char *idx = _atoa(data->index);
+	char idx[BUFSIZE];
+	sprintf(idx, "%lu", data->index);
 
 	PRINT("hsh: ");
 	PRINT(idx);
@@ -57,7 +58,6 @@ int print_error(sh_t *data)
 	PRINT(data->args[0]);
 	PRINT(": ");
 	PRINT(data->error_msg);
-	free(idx);
 	return (0);
 }
 /**

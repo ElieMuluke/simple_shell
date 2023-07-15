@@ -1,11 +1,12 @@
 #include "simple_shell.h"
+
 /**
- * _realloc - reallocates a memory block
- * @ptr: pointer to the previous memory block
- * @old_size: the old size of the block
- * @new_size: the new size of the block
+ * _realloc - reallocates memory block
+ * @ptr: pointer to the previous memory
+ * @old_size: the old size
+ * @new_size: the new size
  *
- * Return: pointer to the newly allocated memory block
+ * Return: a pointer to the newly allocated memory
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
@@ -33,14 +34,13 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	return (result);
 }
-
 /**
- * _memset - fills a memory block with a constant byte
- * @s: pointer to the memory block
- * @n: number of bytes to fill
- * @byt: constant byte to fill the block with
+ * _memset - fills a memory with constant byte
+ * @s: pointer to memory area
+ * @n: first n bytes
+ * @byt: constant byte
  *
- * Return: pointer to the memory block
+ * Return: A pointer to a character
  */
 char *_memset(char *s, char byt, unsigned int n)
 {
@@ -52,12 +52,12 @@ char *_memset(char *s, char byt, unsigned int n)
 	}
 	return (s);
 }
-
 /**
- * free_data - frees the memory allocated for data
- * @data: pointer to the data structure
+ * free_data - frees data
+ * @data: the data structure
  *
- * Return: 0 on success, -1 on failure
+ * Return: (Success) positive number
+ * ------- (Fail) negative number
  */
 int free_data(sh_t *data)
 {
@@ -71,14 +71,13 @@ int free_data(sh_t *data)
 	data->error_msg = NULL;
 	return (0);
 }
-
 /**
- * _memcpy - copies a memory area from source to destination
- * @dest: pointer to the destination memory area
- * @src: pointer to the source memory area
- * @n: number of bytes to copy
+ * _memcpy - cpies memory area
+ * @dest: Destination memory area
+ * @src: Source memory area
+ * @n: Amount of memory byte
  *
- * Return: pointer to the destination memory area
+ * Return: A pointer to dest
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {

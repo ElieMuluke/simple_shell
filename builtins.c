@@ -1,22 +1,21 @@
 #include "simple_shell.h"
 
-#define SET_OLDPWD(V) (V = _strdup(_getenv("OLDPWD")))
-
+#define SETOWD(V) (V = _strdup(_getenv("OLDPWD")))
 /**
- * change_directory - Changes the current directory
- * @data: A pointer to the data structure
+ * change_dir - changes directory
+ * @data: a pointer to the data structure
  *
  * Return: (Success) 0 is returned
- * ------- (Fail) A negative number is returned
+ * ------- (Fail) negative number will returned
  */
-int change_directory(sh_t *data)
+int change_dir(sh_t *data)
 {
 	char *home;
 
 	home = _getenv("HOME");
 	if (data->args[1] == NULL)
 	{
-		SET_OLDPWD(data->oldpwd);
+		SETOWD(data->oldpwd);
 		if (chdir(home) < 0)
 			return (FAIL);
 		return (SUCCESS);
@@ -25,36 +24,34 @@ int change_directory(sh_t *data)
 	{
 		if (data->oldpwd == 0)
 		{
-			SET_OLDPWD(data->oldpwd);
+			SETOWD(data->oldpwd);
 			if (chdir(home) < 0)
 				return (FAIL);
 		}
 		else
 		{
-			SET_OLDPWD(data->oldpwd);
+			SETOWD(data->oldpwd);
 			if (chdir(data->oldpwd) < 0)
 				return (FAIL);
 		}
 	}
 	else
 	{
-		SET_OLDPWD(data->oldpwd);
+		SETOWD(data->oldpwd);
 		if (chdir(data->args[1]) < 0)
 			return (FAIL);
 	}
 	return (SUCCESS);
 }
-
 #undef GETCWD
-
 /**
- * exit_program - Exit the program
- * @data: A pointer to the data structure
+ * abort_prg - exit the program
+ * @data: a pointer to the data structure
  *
  * Return: (Success) 0 is returned
- * ------- (Fail) A negative number is returned
+ * ------- (Fail) negative number will returned
  */
-int exit_program(sh_t *data __attribute__((unused)))
+int abort_prg(sh_t *data __attribute__((unused)))
 {
 	int code, i = 0;
 
@@ -75,13 +72,12 @@ int exit_program(sh_t *data __attribute__((unused)))
 	free_data(data);
 	exit(code);
 }
-
 /**
- * display_help - Display the help menu
- * @data: A pointer to the data structure
+ * display_help - display the help menu
+ * @data: a pointer to the data structure
  *
  * Return: (Success) 0 is returned
- * ------- (Fail) A negative number is returned
+ * ------- (Fail) negative number will returned
  */
 int display_help(sh_t *data)
 {
@@ -91,7 +87,7 @@ int display_help(sh_t *data)
 	fd = open(data->args[1], O_RDONLY);
 	if (fd < 0)
 	{
-		data->error_msg = _strdup("No help topics match\n");
+		data->error_msg = _strdup("no help topics match\n");
 		return (FAIL);
 	}
 	while (rd > 0)
@@ -100,35 +96,34 @@ int display_help(sh_t *data)
 		fw = write(STDOUT_FILENO, &c, rd);
 		if (fw < 0)
 		{
-			data->error_msg = _strdup("Cannot write: permission denied\n");
+			data->error_msg = _strdup("cannot write: permission denied\n");
 			return (FAIL);
 		}
 	}
 	PRINT("\n");
 	return (SUCCESS);
 }
-
 /**
- * handle_builtins - Handle and manage the built-in commands
- * @data: A pointer to the data structure
+ * handle_builtin - handle and manage the builtins cmd
+ * @data: a pointer to the data structure
  *
  * Return: (Success) 0 is returned
- * ------- (Fail) A negative number is returned
+ * ------- (Fail) negative number will returned
  */
-int handle_builtins(sh_t *data)
+int handle_builtin(sh_t *data)
 {
-	blt_t builtin_cmds[] = {
-		{"exit", exit_program},
-		{"cd", change_directory},
+	blt_t blt[] = {
+		{"exit", abort_prg},
+		{"cd", change_dir},
 		{"help", display_help},
 		{NULL, NULL}
 	};
 	int i = 0;
 
-	while ((builtin_cmds + i)->cmd)
+	while ((blt + i)->cmd)
 	{
-		if (_strcmp(data->args[0], (builtin_cmds + i)->cmd) == 0)
-			return ((builtin_cmds + i)->f(data));
+		if (_strcmp(data->args[0], (blt + i)->cmd) == 0)
+			return ((blt + i)->f(data));
 		i++;
 	}
 	return (FAIL);

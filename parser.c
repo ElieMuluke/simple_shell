@@ -1,30 +1,27 @@
 #include "simple_shell.h"
-
 /**
- * is_path_form - checks if the given filename represents a path
- * @data: a pointer to the data structure
+ * is_path_form - chekc if the given fikenname is a path
+ * @data: the data strucct pointer
  *
- * Return: (Success) 1 if the command is a path, 0 otherwise
- * ------- (Fail) -
+ * Return: (Success)
+ * ------- (Fail) otherwise
  */
 int is_path_form(sh_t *data)
 {
 	if (_strchr(data->args[0], '/') != 0)
 	{
 		data->cmd = _strdup(data->args[0]);
-		return 1;  /* Path form */
+		return (SUCCESS);
 	}
-	return 0;  /* Not a path form */
+	return (FAIL);
 }
-
 #define DELIMITER ":"
-
 /**
- * is_short_form - checks if the given filename is in short form
- * @data: a pointer to the data structure
+ * is_short_form - chekc if the given fikenname is short form
+ * @data: the data strucct pointer
  *
- * Return: (Success) -
- * ------- (Fail) -
+ * Return: (Success)
+ * ------- (Fail) otherwise
  */
 void is_short_form(sh_t *data)
 {
@@ -52,21 +49,19 @@ void is_short_form(sh_t *data)
 	}
 	free(_path);
 }
-
 #undef DELIMITER
-
 /**
- * is_builtin - checks if the command is a built-in command
+ * is_builtin - checks if the command is builtin
  * @data: a pointer to the data structure
  *
- * Return: (Success) 1 if the command is a built-in command, 0 otherwise
- * ------- (Fail) -
+ * Return: (Success) 0 is returned
+ * ------- (Fail) negative number will returned
  */
 int is_builtin(sh_t *data)
 {
 	blt_t blt[] = {
 		{"exit", abort_prg},
-		{"cd", change_directory},
+		{"cd", change_dir},
 		{"help", display_help},
 		{NULL, NULL}
 	};
@@ -75,8 +70,8 @@ int is_builtin(sh_t *data)
 	while ((blt + i)->cmd)
 	{
 		if (_strcmp(data->args[0], (blt + i)->cmd) == 0)
-			return 1;  /* Built-in command */
+			return (SUCCESS);
 		i++;
 	}
-	return 0;  /* Not a built-in command */
+	return (NEUTRAL);
 }
