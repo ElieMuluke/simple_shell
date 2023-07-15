@@ -1,6 +1,6 @@
 #include "simple_shell.h"
 /**
- * _atoi - Convert a string to an integer
+ * _atoi - Convert a string to an integer like an atoi fuction
  * @str: The string to convert
  *
  * Return: The converted integer
@@ -50,8 +50,8 @@ int intlen(int num)
 int print_error(sh_t *data)
 {
 	char idx[BUFSIZE];
-	sprintf(idx, "%lu", data->index);
 
+	sprintf(idx, "%lu", data->index);
 	PRINT("hsh: ");
 	PRINT(idx);
 	PRINT(": ");
