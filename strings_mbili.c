@@ -16,7 +16,7 @@ char *_strcpy(char *dest, char *source)
 		dest[i] = source[i];
 	}
 	dest[i] = '\0';
-	return dest;
+	return (dest);
 }
 
 /**
@@ -29,7 +29,7 @@ int _isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 	{
-		return SUCCESS;
+		return (SUCCESS);
 	}
-	return FAIL;
+	return (FAIL);
 }
