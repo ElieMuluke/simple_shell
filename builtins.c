@@ -3,10 +3,10 @@
 #define SETOWD(V) (V = _strdup(_getenv("OLDPWD")))
 /**
  * change_dir - changes directory
- * @data: a pointer to the data structure
+ * @data: points to the data structure
  *
- * Return: (Success) 0 is returned
- * ------- (Fail) negative number will returned
+ * Return: (Success) return 0
+ * ------- (Fail) return negative number
  */
 int change_dir(sh_t *data)
 {
@@ -43,13 +43,14 @@ int change_dir(sh_t *data)
 	}
 	return (SUCCESS);
 }
+
 #undef GETCWD
 /**
- * abort_prg - exit the program
- * @data: a pointer to the data structure
+ * abort_prg - exit out of the program
+ * @data: points to the data structure
  *
- * Return: (Success) 0 is returned
- * ------- (Fail) negative number will returned
+ * Return: (Success) return 0
+ * ------- (Fail) return a negative number
  */
 int abort_prg(sh_t *data __attribute__((unused)))
 {
@@ -72,12 +73,13 @@ int abort_prg(sh_t *data __attribute__((unused)))
 	free_data(data);
 	exit(code);
 }
+
 /**
  * display_help - display the help menu
- * @data: a pointer to the data structure
+ * @data: points to the data structure
  *
- * Return: (Success) 0 is returned
- * ------- (Fail) negative number will returned
+ * Return: (Success) will return 0
+ * ------- (Fail) will return a negative number
  */
 int display_help(sh_t *data)
 {
@@ -103,12 +105,13 @@ int display_help(sh_t *data)
 	PRINT("\n");
 	return (SUCCESS);
 }
+
 /**
  * handle_builtin - handle and manage the builtins cmd
- * @data: a pointer to the data structure
+ * @data: points to the data structure
  *
- * Return: (Success) 0 is returned
- * ------- (Fail) negative number will returned
+ * Return: (Success) will return 0
+ * ------- (Fail) will return a negative number
  */
 int handle_builtin(sh_t *data)
 {

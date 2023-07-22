@@ -4,8 +4,8 @@
  * @first: The destination string.
  * @second: The source string.
  *
- * Return: (Success) Pointer to the newly concatenated string.
- * ------- (Fail) NULL if concatenation failed.
+ * Return: (Success) returns a pointer to the newly concatenated string.
+ * ------- (Fail) returns NULL if concatenation failed.
  */
 char *_strcat(char *first, char *second)
 {
@@ -32,8 +32,8 @@ char *_strcat(char *first, char *second)
  * _strlen - Determines the length of a given string.
  * @str: The string to calculate the length of.
  *
- * Return: (Success) The length of the string.
- * ------- (Fail) A negative value.
+ * Return: (Success) The length of the string is returned.
+ * ------- (Fail) A negative value is returned.
  */
 int _strlen(char *str)
 {
@@ -49,8 +49,8 @@ int _strlen(char *str)
  * @s1: The first string.
  * @s2: The second string.
  *
- * Return: (Success) A positive number if strings are different.
- * ------- (Fail) A negative number if strings are the same.
+ * Return: (Success) A positive number is returned if strings are different.
+ * ------- (Fail) A negative number is returned if strings are the same.
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -76,8 +76,8 @@ int _strcmp(char *s1, char *s2)
  * @str: The string to search in.
  * @c: The character to find.
  *
- * Return: (Success) A pointer to the first occurrence of the character.
- * ------- (Fail) NULL if the character is not found.
+ * Return: (Success) return A pointer to the first occurrence of the character.
+ * ------- (Fail) NULL is returned if the character is not found.
  */
 char *_strchr(char *str, char c)
 {
@@ -95,8 +95,8 @@ char *_strchr(char *str, char c)
  * _strdup - Duplicates a string.
  * @str: The string to duplicate.
  *
- * Return: (Success) A pointer to the duplicated string.
- * ------- (Fail) NULL if duplication failed.
+ * Return: (Success) A pointer to the duplicated string is returned.
+ * ------- (Fail) NULL is returned if duplication failed.
  */
 char *_strdup(char *str)
 {

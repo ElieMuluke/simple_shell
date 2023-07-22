@@ -1,10 +1,11 @@
 #include "simple_shell.h"
+
 /**
  * _getenv - gets the path
  * @path_name: a pointer to the struct of data
  *
- * Return: (Success) a positive number
- * ------- (Fail) a negative number
+ * Return: (Success) return a positive number
+ * ------- (Fail) return a negative number
  */
 char *_getenv(char *path_name)
 {
@@ -28,6 +29,7 @@ char *_getenv(char *path_name)
 	}
 	return (NULL);
 }
+
 /**
  * signal_handler - handle the process interrept signal
  * @signo: the signal identifier
@@ -42,6 +44,7 @@ void signal_handler(int signo)
 		PRINT(PROMPT);
 	}
 }
+
 /**
  * fill_an_array - fill an array with elements
  * @a: the given array
@@ -83,6 +86,7 @@ void array_rev(char *arr, int len)
 		arr[(len - 1) - i] = tmp;
 	}
 }
+
 /**
  * index_cmd - indexed command
  * @data: a pointer to the data structure

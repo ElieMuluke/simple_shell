@@ -57,7 +57,7 @@ void is_short_form(sh_t *data)
 
 /**
  * is_builtin - checks if the command is a built-in
- * @data: a pointer to the data structure
+ * @data: pointer to the data structure
  *
  * Return: (SUCCESS) if the command is a built-in
  * ------- (FAIL) negative number will be returned

@@ -49,8 +49,8 @@ int main(void)
 }
 
 /**
- * read_line - Read a line from the standard input
- * @data: Pointer to the data structure
+ * read_line - Read a line from the standard input/terminal
+ * @data: Pointer to data structure
  *
  * Return: (Success) A positive number
  * ------- (Fail) A negative number
@@ -94,8 +94,8 @@ int read_line(sh_t *data)
 #define DELIMITER " \n\t\r\a\v"
 
 /**
- * split_line - Split line into tokens
- * @data: Pointer to the data structure
+ * split_line - Split line/input into tokens
+ * @data: Point to the data structure
  *
  * Return: (Success) A positive number
  * ------- (Fail) A negative number
@@ -135,7 +135,7 @@ int split_line(sh_t *data)
 #define DELIMITER ":"
 
 /**
- * parse_line - Parse arguments to valid commands
+ * parse_line - Parse arguments/tokens to valid commands
  * @data: Pointer to the data structure
  *
  * Return: (Success) A positive number
@@ -159,7 +159,7 @@ int parse_line(sh_t *data)
 
 /**
  * process_cmd - Process command and execute process
- * @data: Pointer to the data structure
+ * @data: Point to the data structure
  *
  * Return: (Success) A positive number
  * ------- (Fail) A negative number

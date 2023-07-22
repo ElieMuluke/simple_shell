@@ -1,9 +1,10 @@
 #include "simple_shell.h"
+
 /**
  * _atoi - Convert a string to an integer like an atoi fuction
  * @str: The string to convert
  *
- * Return: The converted integer
+ * Return: The converted integer.
  */
 int _atoi(char *str)
 {
@@ -27,7 +28,7 @@ int _atoi(char *str)
  * intlen - Calculate the number of digits in an integer
  * @num: The integer to calculate the length of
  *
- * Return: The length of the integer
+ * Return: The length of the integer.
  */
 int intlen(int num)
 {
@@ -45,7 +46,7 @@ int intlen(int num)
  * print_error - Print an error message
  * @data: A pointer to the data structure
  *
- * Return: Always returns 0
+ * Return: Always returns 0.
  */
 int print_error(sh_t *data)
 {
@@ -60,11 +61,12 @@ int print_error(sh_t *data)
 	PRINT(data->error_msg);
 	return (0);
 }
+
 /**
  * write_history - Write a line of history to a file
  * @data: A pointer to the data structure (unused)
  *
- * Return: 1 on success, -1 on failure
+ * Return: 1 on success, -1 on failure.
  */
 int write_history(sh_t *data __attribute__((unused)))
 {

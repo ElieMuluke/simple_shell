@@ -2,11 +2,11 @@
 
 /**
  * _realloc - reallocates memory block
- * @ptr: pointer to the previous memory
+ * @ptr: points to the previous memory
  * @old_size: the old size
  * @new_size: the new size
  *
- * Return: a pointer to the newly allocated memory
+ * Return: pointer to the newly allocated memory
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
@@ -34,9 +34,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	return (result);
 }
+
 /**
  * _memset - fills a memory with constant byte
- * @s: pointer to memory area
+ * @s: points to memory area
  * @n: first n bytes
  * @byt: constant byte
  *
@@ -52,9 +53,10 @@ char *_memset(char *s, char byt, unsigned int n)
 	}
 	return (s);
 }
+
 /**
  * free_data - frees data
- * @data: the data structure
+ * @data: the data structure to be freed
  *
  * Return: (Success) positive number
  * ------- (Fail) negative number
@@ -71,6 +73,7 @@ int free_data(sh_t *data)
 	data->error_msg = NULL;
 	return (0);
 }
+
 /**
  * _memcpy - cpies memory area
  * @dest: Destination memory area
