@@ -162,7 +162,7 @@ int parse_line(sh_t *data)
  * @data: Point to the data structure
  *
  * Return: (Success) A positive number
- * ------- (Fail) A negative number
+ * ------- (Fail) negative number
  */
 int process_cmd(sh_t *data)
 {
