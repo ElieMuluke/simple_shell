@@ -66,7 +66,7 @@ int print_error(sh_t *data)
  * write_history - Write a line of history to a file
  * @data: A pointer to the data structure (unused)
  *
- * Return: 1 on success, -1 on failure.
+ * Return: 1 on success, -1 on failure..
  */
 int write_history(sh_t *data __attribute__((unused)))
 {
