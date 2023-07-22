@@ -1,4 +1,4 @@
 # swap fules
 *.swp
-# vscode hidden folder
+# .vscode
 .vscode
