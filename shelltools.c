@@ -51,7 +51,7 @@ void signal_handler(int signo)
  * @el: the given element
  * @len: the length of the array
  *
- * Return: pointer to filled array
+ * Return: a pointer to the filled array
  */
 void *fill_an_array(void *a, int el, unsigned int len)
 {
