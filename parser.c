@@ -56,7 +56,7 @@ void is_short_form(sh_t *data)
 #undef DELIMITER
 
 /**
- * is_builtin - checks if the command is a built-in
+ * is_builtin - check if the command is a built-in
  * @data: pointer to the data structure
  *
  * Return: (SUCCESS) if the command is a built-in
