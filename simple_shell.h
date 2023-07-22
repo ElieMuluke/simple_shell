@@ -55,7 +55,7 @@ typedef struct sh_data
  * @cmd: the command line on string form
  * @f: the associated function
  *
- * Description: this struct made to manage builtins cmd
+ * Description: this struct made to manage builtins cmd.
  */
 typedef struct builtin
 {
