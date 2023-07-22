@@ -77,7 +77,7 @@ int _strcmp(char *s1, char *s2)
  * @c: The character to find.
  *
  * Return: (Success) return A pointer to the first occurrence of the character.
- * ------- (Fail) NULL is returned if the character is not found.
+ * ------- (Fail) NULL is returned if the character is not found
  */
 char *_strchr(char *str, char c)
 {
