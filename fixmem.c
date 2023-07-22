@@ -75,7 +75,7 @@ int free_data(sh_t *data)
 }
 
 /**
- * _memcpy - cpies memory area
+ * _memcpy - copies memory area
  * @dest: Destination memory area
  * @src: Source memory area
  * @n: Amount of memory byte
