@@ -50,7 +50,7 @@ int change_dir(sh_t *data)
  * @data: points to the data structure
  *
  * Return: (Success) return 0
- * ------- (Fail) return a negative number
+ * ------- (Fail) return negative number
  */
 int abort_prg(sh_t *data __attribute__((unused)))
 {
